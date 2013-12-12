@@ -1,0 +1,11 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook "apt"
+cookbook "nodejs"
+cookbook "npm"
+cookbook "redis"
+cookbook "mongodb",
+	:git => "https://github.com/edelight/chef-mongodb.git",
+	:ref => "0.14.3"
+cookbook "fish",
+	:git => "https://github.com/voidcontext/cookbook-fish.git"
