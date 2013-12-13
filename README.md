@@ -8,7 +8,7 @@ A boilerplate for developing sails apps with vagrant.
 ```
 $ cd /path/to/project
 $ git clone https://github.com/voidcontext/vagrant-sails-boilerplate.git .
-$ rm -rf .git
+$ rm -rf .git README.md LICENSE
 $ # edit Cheffile
 $ # edit Vagrantfile
 $ vagrant plugin install vagrant-omnibus
