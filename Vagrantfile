@@ -39,7 +39,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "redis::install_from_package"
     chef.add_recipe "nodejs"
     # npm is needed for its lwrp-s
-    # chef.add_recipe "npm"
+    chef.add_recipe "npm"
 
     chef.add_recipe "mongodb::10gen_repo"
     chef.add_recipe "mongodb"
