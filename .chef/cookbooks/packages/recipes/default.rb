@@ -8,7 +8,7 @@ end
 if node['packages']['npm'].size > 0
   node['packages']['npm'].each do |name|
     npm_package name do
-      action :upgrade
+      action :install
     end
   end
 end
