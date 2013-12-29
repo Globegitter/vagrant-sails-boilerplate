@@ -63,7 +63,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       },
       "packages" => {
         "apt" => [ "vim", "mc", "htop", "iotop"],
-        "npm" => [ "sails@0.9.7", "grunt-cli" ],
+        "npm" => [ "sails@0.9.8", "grunt-cli" ],
       },
       "fish" => {
         "install_method" => "source",
