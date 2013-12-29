@@ -27,7 +27,7 @@ $ # fix .gitignore file
 $ # happy coding :)
 ```
 
-Fix .gitigonre file by adding the following lines
+Fix ```.gitignore``` file by adding the following lines
 
 ```
 ### Vagrant and Chef
