@@ -24,6 +24,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.network :private_network, ip: "192.168.33.12"
+  config.vm.network :forwarded_port, guest: 1337, host: 1337, auto_correct: true
+  config.vm.hostname = "sailsjs"
+
+  
+  nfs_setting = RUBY_PLATFORM =~ /darwin/ || RUBY_PLATFORM =~ /linux/
+  config.vm.synced_folder "www", "/var/www", id: "vagrant-root", :nfs => nfs_setting
+  
   # config for hostupdater vagrant plugin
   # config.hostsupdater.aliases = []
 
