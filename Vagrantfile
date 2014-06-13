@@ -6,8 +6,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # pick an ubuntu 13.04 image
-  config.vm.box = "raring64cloudimage"
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box = "phusion-open-ubuntu-14.04-amd64"
+  config.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
 
   # config for librarian chef vagrant plugin
   config.librarian_chef.cheffile_dir = "."
@@ -43,7 +43,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.add_recipe "mongodb::10gen_repo"
     chef.add_recipe "mongodb"
-
+  
+    chef.add_recipe "postgresql"
+    
+    chef.add_recipe "mysql"
+    
     chef.add_recipe "packages"
     chef.add_recipe "fish"
 
@@ -56,14 +60,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         "install_method" => "package",
       },
       "npm" => {
-        "version" => "1.3.13",
+        "version" => "1.4.6",
       },
       "mongodb" => {
         "smallfiles" => true,
       },
       "packages" => {
         "apt" => [ "vim", "mc", "htop", "iotop"],
-        "npm" => [ "sails@0.9.8", "grunt-cli" ],
+        "npm" => [ "sails@0.10.0-rc8", "grunt-cli" ],
       },
       "fish" => {
         "install_method" => "source",
